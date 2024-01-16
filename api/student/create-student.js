@@ -8,7 +8,7 @@ router.post('/create-student', (req, res) => {
     let sql = `INSERT INTO student ( id, password,name,sex,tel,class,time )
                        VALUES
                        ('${req.body.id}', '123456', '${req.body.name}', '${req.body.sex}', '${req.body.tel}', '${req.body.class}', NOW());
-INSERT INTO achievement (stucode, name, vue, node, marx, innovate, mysql, math, time)
+INSERT INTO achievement (stucode, name, prog_fund, disc_math, adv_prog, data_struct, comp_princ, db_princ, time)
 VALUES
     ('${req.body.id}', '${req.body.name}', '', '', '', '', '', '', NOW());
                        `

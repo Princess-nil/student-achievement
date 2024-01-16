@@ -46,40 +46,40 @@ if (localStorage.id == "student") {
     studentName.value = res.res[0].name;
     tableData.value = res.res;
     let data = res.res[0];
-    if (+data.vue < 60) {
+    if (+data.prog_fund < 60) {
       student.value.push({
-        key: "VUE",
-        value: data.vue,
+        key: "程序设计基础",
+        value: data.prog_fund,
       });
     }
-    if (+data.node < 60) {
+    if (+data.disc_math < 60) {
       student.value.push({
-        key: "Node",
-        value: data.node,
+        key: "离散数学",
+        value: data.disc_math,
       });
     }
-    if (+data.marx < 60) {
+    if (+data.adv_prog < 60) {
       student.value.push({
-        key: "马克思主义思想",
-        value: data.marx,
+        key: "高级程序设计",
+        value: data.adv_prog,
       });
     }
-    if (+data.innovate < 60) {
+    if (+data.data_struct < 60) {
       student.value.push({
-        key: "创新与实践",
-        value: data.innovate,
+        key: "数据结构",
+        value: data.data_struct,
       });
     }
-    if (+data.mysql < 60) {
+    if (+data.comp_princ < 60) {
       student.value.push({
-        key: "MySql",
-        value: data.mysql,
+        key: "计算机组成原理",
+        value: data.comp_princ,
       });
     }
-    if (+data.math < 60) {
+    if (+data.db_princ < 60) {
       student.value.push({
-        key: "高等数学",
-        value: data.math,
+        key: "数据库原理",
+        value: data.db_princ,
       });
     }
   });

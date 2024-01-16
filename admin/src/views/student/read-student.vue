@@ -102,6 +102,9 @@ let stuClass = ref("");
 
 let setClass = ref([
   {
+    label: "所有学生",
+  },
+  {
     label: "计科2001",
   },
   {
@@ -120,9 +123,17 @@ let setClass = ref([
 ]);
 
 function select() {
-  api(`select * from student where class='${stuClass.value}';`).then((res) => {
-    data.value = res.res;
-  });
+  if (stuClass.value == "所有学生") {
+    api(`select * from student`).then((res) => {
+      data.value = res.res;
+    });
+  }
+  else {
+    api(`select * from student where class='${stuClass.value}';`).then((res) => {
+      data.value = res.res;
+    });
+
+  }
 }
 let stuName = ref("");
 function search() {

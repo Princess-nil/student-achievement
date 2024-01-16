@@ -5,23 +5,23 @@ const mysql = require("../mysql");
 function key(val) {
   let value;
   switch (val) {
-    case "创新与实践":
-      value = "innovate";
+    case "程序设计基础":
+      value = "prog_fund";
       break;
-    case "马克思主义思想":
-      value = "marx";
+    case "离散数学":
+      value = "disc_math";
       break;
-    case "高等数学":
-      value = "math";
+    case "高级程序设计":
+      value = "adv_prog";
       break;
-    case "VUE.js":
-      value = "vue";
+    case "数据结构":
+      value = "data_struct";
       break;
-    case "Node.js":
-      value = "node";
+    case "计算机组成原理":
+      value = "comp_princ";
       break;
-    case "MySQL数据库":
-      value = "mysql";
+    case "数据库原理":
+      value = "db_princ";
       break;
   }
   return value;

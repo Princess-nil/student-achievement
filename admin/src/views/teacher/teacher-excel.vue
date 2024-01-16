@@ -41,23 +41,23 @@ let subject = ref("");
 api(`select * from teacher where id='${localStorage.teacher}';`).then((res) => {
   showScore.value = res.res[0].subject + "成绩";
   switch (res.res[0].subject) {
-    case "创新与实践":
-      subject.value = "innovate";
+    case "程序设计基础":
+      subject.value = "prog_fund";
       break;
-    case "马克思主义思想":
-      subject.value = "marx";
+    case "离散数学":
+      subject.value = "disc_math";
       break;
-    case "高等数学":
-      subject.value = "math";
+    case "高级程序设计":
+      subject.value = "adv_prog";
       break;
-    case "VUE.js":
-      subject.value = "vue";
+    case "数据结构":
+      subject.value = "data_struct";
       break;
-    case "Node.js":
-      subject.value = "node";
+    case "计算机组成原理":
+      subject.value = "comp_princ";
       break;
-    case "MySQL数据库":
-      subject.value = "mysql";
+    case "数据库原理":
+      subject.value = "db_princ";
       break;
   }
 });

@@ -148,23 +148,23 @@ let label = ref("");
 readUser({ col: "teacher", id: localStorage.teacher }).then(res => {
   label.value = res.res[0].subject + "成绩";
   switch (res.res[0].subject) {
-    case "创新与实践":
-      subject.value = "innovate";
+    case "程序设计基础":
+      subject.value = "prog_fund";
       break;
-    case "马克思主义思想":
-      subject.value = "marx";
+    case "离散数学":
+      subject.value = "disc_math";
       break;
-    case "高等数学":
-      subject.value = "math";
+    case "高级程序设计":
+      subject.value = "adv_prog";
       break;
-    case "VUE.js":
-      subject.value = "vue";
+    case "数据结构":
+      subject.value = "data_struct";
       break;
-    case "Node.js":
-      subject.value = "node";
+    case "计算机组成原理":
+      subject.value = "comp_princ";
       break;
-    case "MySQL数据库":
-      subject.value = "mysql";
+    case "数据库原理":
+      subject.value = "db_princ";
       break;
   }
   api(`select * from achievement`).then(res => {
@@ -177,26 +177,24 @@ readUser({ col: "teacher", id: localStorage.teacher }).then(res => {
   });
 });
 
-let stuClass = ref("");
+let stuClass = ref("计科2001");
 let setClass = ref([
   {
-    label: "软件工程1班",
+    label: "计科2001",
   },
   {
-    label: "软件工程2班",
+    label: "计科2002",
   },
   {
-    label: "软件工程3班",
+    label: "计科2003",
   },
   {
-    label: "软件工程4班",
+    label: "计科2004",
   },
   {
-    label: "软件工程5班",
+    label: "计科2005",
   },
-  {
-    label: "软件工程6班",
-  },
+
 ]);
 // 查询对应班级的学生的学号，将成绩总数据的表进行遍历，如果学号对得上，说明是这个班级的，就push到tableData里面
 function classSelect() {
