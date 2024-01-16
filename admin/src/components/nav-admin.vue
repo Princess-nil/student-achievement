@@ -1,7 +1,7 @@
 <template>
   <el-row>
     <el-col>
-      <el-menu :router="true" default-active="/create-teacher" class="el-menu-vertical-demo" background-color="#545c64"
+      <el-menu :router="true" default-active="/create-teacher" class="el-menu-vertical-demo" background-color="#09203f"
         text-color="#fff" active-text-color="#ffd04b">
         <el-menu-item> 图标 </el-menu-item>
         <el-submenu index="1">
@@ -76,7 +76,7 @@ let router = useRouter();
   user-select: none;
   width: 200px;
   height: 100vh;
-  background: #545c64;
+  background: #09203f;
   position: fixed;
   top: 0px;
   left: 0px;

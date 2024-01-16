@@ -59,26 +59,24 @@ let sexs = ref([
     label: "女",
   },
 ]);
-let stuClass = ref("软件工程1班");
+let stuClass = ref("计科2001");
 let setClass = ref([
   {
-    label: "软件工程1班",
+    label: "计科2001",
   },
   {
-    label: "软件工程2班",
+    label: "计科2002",
   },
   {
-    label: "软件工程3班",
+    label: "计科2003",
   },
   {
-    label: "软件工程4班",
+    label: "计科2004",
   },
   {
-    label: "软件工程5班",
+    label: "计科2005",
   },
-  {
-    label: "软件工程6班",
-  },
+
 ]);
 // 将成绩表和学生绑定
 function create() {

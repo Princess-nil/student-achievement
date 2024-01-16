@@ -16,6 +16,8 @@ import axios from 'axios';
 import 'dayjs/locale/zh-cn'
 import locale from 'element-plus/lib/locale/lang/zh-cn'
 
+import "./assets/webgradients.css"
+
 axios.defaults.baseURL = 'http://127.0.0.1:6789';
 
 createApp(App)

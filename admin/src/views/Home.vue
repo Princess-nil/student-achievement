@@ -5,7 +5,9 @@
     <div class="back" title="点击退出系统" @click="back">
       <i class="el-icon-back"></i>
       退出系统
+      
     </div>
+  
   </div>
   <router-view></router-view>
 </template>
@@ -27,10 +29,10 @@ let nav =
 let router = useRouter();
 let title =
   localStorage.id == "admin"
-    ? "管理员"
+    ? "管理员系统"
     : localStorage.id == "student"
-    ? "学生"
-    : "教师";
+    ? "学生系统"
+    : "教师系统";
 let name = localStorage.user;
 if (name == undefined) {
   router.replace("/logn");
@@ -49,16 +51,18 @@ function back() {
 <style scoped>
 .title {
   width: 100%;
-  height: 44px;
-  line-height: 44px;
+  height: 50px;
+  line-height: 50px;
   text-align: center;
-  background-color: #545c64;
+  font-size: 18px;
+  background-color: #09203f;
   color: white;
 }
 .back {
   float: right;
-  font-size: 14px;
+  font-size: 18px;
   margin-right: 20px;
   color: white;
+  cursor: pointer;
 }
 </style>

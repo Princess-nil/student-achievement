@@ -1,10 +1,10 @@
 <template>
   <div v-if="isWatch == 'true'">
     <el-table :data="data" style="width: 100%">
-      <el-table-column prop="key" label="说明" width="200"> </el-table-column>
-      <el-table-column prop="value" label="结果" width="200"> </el-table-column>
+      <el-table-column prop="key" label="说明" align="center"> </el-table-column>
+      <el-table-column prop="value" label="结果" align="center"> </el-table-column>
     </el-table>
-    <el-button type="primary" icon="el-icon-download" @click="log">打印成绩</el-button>
+    <el-button type="primary" icon="el-icon-download" class="print-button" @click="log">打印成绩</el-button>
     <el-card class="box-card" v-if="isShow">
       <template #header>
         <div class="card-header">
@@ -53,15 +53,16 @@ api(`select * from achievement where stucode='${localStorage.student}'`).then(
         gpa.value += 1;
       }
     });
+    console.log(gpa.value);
     let key = [
       "学号",
       "姓名",
-      "VUE",
-      "Node.js",
-      "马克思",
-      "创新",
-      "MysSQL",
-      "高等数学",
+      "程序设计基础",
+      "离散数学",
+      "高级程序设计",
+      "数据结构",
+      "计算机组成原理",
+      "数据库原理",
       "平局绩点",
       "平均分",
       "总分",
@@ -85,12 +86,12 @@ function log() {
   data.push([
     "姓名",
     "学号",
-    "VUE",
-    "Node.js",
-    "马克思主义哲学",
-    "创新与实践",
-    "MySQL",
-    "高等数学",
+    "程序设计基础",
+      "离散数学",
+      "高级程序设计",
+      "数据结构",
+      "计算机组成原理",
+      "数据库原理",
     "总分",
   ]);
   let newData = Object.values(tableData.value[0]);
@@ -133,5 +134,11 @@ api(`select * from isshow`).then((res) => {
   left: 0px;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 9999;
+}
+
+.print-button {
+  float: right; 
+  margin-right: 40px;
+
 }
 </style>

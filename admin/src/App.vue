@@ -11,6 +11,7 @@ body{
   width: 100vw;
   height: 100vh;
   background-size: 100% 100%;
-  background-image:url('./assets/logn-bg.jpg');
+  // background-image:url('./assets/logn-bg.jpg');
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
 }
 </style>

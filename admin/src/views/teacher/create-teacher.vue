@@ -59,25 +59,25 @@ let sexs = ref([
     label: "女",
   },
 ]);
-let subject = ref("创新与实践");
+let subject = ref("程序设计基础");
 let subjects = ref([
   {
-    label: "创新与实践",
+    label: "程序设计基础",
   },
   {
-    label: "马克思主义思想",
+    label: "离散数学",
   },
   {
-    label: "高等数学",
+    label: "高级程序设计",
   },
   {
-    label: "VUE.js",
+    label: "数据结构",
   },
   {
-    label: "Node.js",
+    label: "计算机组成原理",
   },
   {
-    label: "MySQL数据库",
+    label: "数据库原理",
   },
 ]);
 function create() {
