@@ -9,7 +9,7 @@
         text-color="#fff"
         active-text-color="#ffd04b"
       >
-        <el-menu-item> 图标 </el-menu-item>
+        <el-menu-item> 张子阳 软工课设 </el-menu-item>
         <el-submenu index="1">
           <template #title>
             <i class="el-icon-user"></i>
@@ -30,9 +30,9 @@
           <el-menu-item index="/teacher-chengji">
             <template #title>成绩录入</template>
           </el-menu-item>
-          <el-menu-item index="/teacher-excel">
+          <!-- <el-menu-item index="/teacher-excel">
             <template #title>表格上传</template>
-          </el-menu-item>
+          </el-menu-item> -->
         </el-submenu>
         <el-menu-item index="/read-message">
           <i class="el-icon-s-order"></i>

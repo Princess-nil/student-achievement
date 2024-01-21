@@ -10,7 +10,7 @@
         active-text-color="#ffd04b"
         
       >
-        <el-menu-item> 图标 </el-menu-item>
+        <el-menu-item> 张子阳 软工课设 </el-menu-item>
         <el-menu-item index="/student-score">
           <i class="el-icon-s-data"></i>
           <template #title>察看成绩</template>

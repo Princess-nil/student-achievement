@@ -7,7 +7,7 @@
   <el-dialog v-model="prop.isShow" @opened="create" title="数据统计" :before-close="notShow">
     <div class="box">
       <div id="main" @click.stop=""></div>
-      <div id="show" @click.stop=""></div>
+      <!-- <div id="show" @click.stop=""></div> -->
     </div>
   </el-dialog>
 </template>
@@ -20,26 +20,30 @@ let emit = defineEmits();
 function notShow() {
   emit("update:isShow", false);
 }
+console.log(prop.option);
 
 function create() {
   console.log(1);
+
   var myChart = echarts.init(document.getElementById("main"));
   myChart.setOption(prop.option);
-  axios.get(`/statistics/${localStorage.getItem('teacher')}`).then(res => {
-    var echart = echarts.init(document.getElementById("show"));
-    echart.setOption({
-      title: { text: '成绩散点' },
-      xAxis: {},
-      yAxis: {},
-      series: [
-        {
-          symbolSize: 10,
-          data: res.data.data,
-          type: 'scatter'
-        }
-      ]
-    });
-  })
+
+
+  // axios.get(`/statistics/${localStorage.getItem('teacher')}`).then(res => {
+  //   var echart = echarts.init(document.getElementById("show"));
+  //   echart.setOption({
+  //     title: { text: '成绩散点' },
+  //     xAxis: {},
+  //     yAxis: {},
+  //     series: [
+  //       {
+  //         symbolSize: 10,
+  //         data: res.data.data,
+  //         type: 'scatter'
+  //       }
+  //     ]
+  //   });
+  // })
 }
 
 
@@ -56,7 +60,7 @@ function create() {
 }
 
 #main {
-  width: 400px;
+  width: 800px;
   height: 500px;
 }
 </style>

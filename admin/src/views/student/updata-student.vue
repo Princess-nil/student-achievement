@@ -11,15 +11,24 @@
         :disabled="isStudent"
       ></el-input>
     </el-form-item>
-    <el-form-item label="密码">
-      <el-input type="text" v-model="password" placeholder="密码"></el-input>
+    <el-form-item label="旧密码">
+      <el-input type="text" v-model="old_password" placeholder="旧密码"></el-input>
     </el-form-item>
+    <el-form-item label="新密码">
+      <el-input type="text" v-model="password" placeholder="新密码"></el-input>
+    </el-form-item>
+
+    <el-form-item label="确认密码">
+      <el-input type="text" v-model="twi_password" placeholder="确认密码"></el-input>
+    </el-form-item>
+
     <el-form-item label="电话号码">
       <el-input
         type="text"
         v-model="tel"
         placeholder="填写学生电话"
         maxlength="11"
+        :disabled="isStudent"
       ></el-input>
     </el-form-item>
 
@@ -64,6 +73,10 @@ let name = ref("");
 let tel = ref("");
 let sex = ref("男");
 let password = ref("");
+
+let old_password = ref("");
+let twi_password = ref("");
+
 let sexs = ref([
   {
     label: "男",
@@ -102,7 +115,7 @@ readUser({
   tel.value = data.tel;
   sex.value = data.sex;
   stuClass.value = data.class;
-  password.value = data.password;
+  old_password.value = data.password;
 });
 
 function create() {
@@ -112,7 +125,7 @@ function create() {
     nullTest.test(name.value) &&
     nullTest.test(tel.value) &&
     telTest.test(tel.value);
-  if (isCreate) {
+  if (isCreate && password.value == twi_password.value) {
     api(
       ` UPDATE student SET name='${name.value}',tel='${tel.value}',sex='${sex.value}',class='${stuClass.value}',password='${password.value}' WHERE id='${id.value}';`
     ).then((res) => {

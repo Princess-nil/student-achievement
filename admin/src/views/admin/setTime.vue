@@ -32,7 +32,7 @@ api(`select * from time where id='settime';`).then((res) => {
 });
 function setTime() {
   api(
-    ` UPDATE time SET start='${time.value[0].getTime()}',end='${time.value[1].getTime()}' WHERE id='settime';`
+    ` UPDATE time SET start='${time.value[0].getTime()}',end='${time.value[1].getTime()}', WHERE id='settime';`
   ).then((res) => {
     console.log(res);
   });

@@ -3,7 +3,7 @@
     <el-col>
       <el-menu :router="true" default-active="/create-teacher" class="el-menu-vertical-demo" background-color="#09203f"
         text-color="#fff" active-text-color="#ffd04b">
-        <el-menu-item> 图标 </el-menu-item>
+        <el-menu-item> 张子阳 软工课设 </el-menu-item>
         <el-submenu index="1">
           <template #title>
             <i class="el-icon-user-solid"></i>
@@ -46,18 +46,18 @@
             <template #title>管理公告</template>
           </el-menu-item>
         </el-submenu>
-        <el-menu-item index="/settime">
+        <!-- <el-menu-item index="/settime">
           <i class="el-icon-timer"></i>
           <template #title>时间设置</template>
-        </el-menu-item>
+        </el-menu-item> -->
         <el-menu-item index="/updata-admin">
           <i class="el-icon-menu"></i>
           <template #title>修改信息</template>
         </el-menu-item>
-        <el-menu-item index="/read-apply">
+        <!-- <el-menu-item index="/read-apply">
           <i class="el-icon-menu"></i>
           <template #title>查看申请 </template>
-        </el-menu-item>
+        </el-menu-item> -->
         <el-menu-item index="/create-admin">
           <i class="el-icon-user-solid"></i>
           <template #title>添加管理员</template>

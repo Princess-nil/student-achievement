@@ -16,13 +16,13 @@
     </el-button>
     <el-button @click="log" type="primary" class="log">打印成绩</el-button>
     <el-button type="primary" class="log" @click="isEchart">成绩分析</el-button>
-    <div class="log">
+    <!-- <div class="log">
       <input type="file" ref="file" id="file" style="display: none" accept=".xlsx" @change="load" />
       <label for="file" class="el-button el-button--primary">
         <i class="el-icon-upload"></i>
         上传文件
       </label>
-    </div>
+    </div> -->
   </div>
 
   <el-table :data="tableData" style="width: 100%">
@@ -47,8 +47,10 @@
       <a :href="excel" download="excel" target="_blank">点击下载</a>
     </div>
   </el-card>
+
   <echarts v-model:isShow="isShow" :option="option" v-if="isShow"></echarts>
-  <el-button type="primary" round class="shenqing" @click="showApply = true">申请开放</el-button>
+
+  <!-- <el-button type="primary" round class="shenqing" @click="showApply = true">申请开放</el-button> -->
   <div class="alert" v-show="showApply" @click="showApply = false">
     <div class="box" @click.stop="">
       <el-date-picker v-model="time" type="date" placeholder="选择日期"> </el-date-picker>
@@ -177,8 +179,11 @@ readUser({ col: "teacher", id: localStorage.teacher }).then(res => {
   });
 });
 
-let stuClass = ref("计科2001");
+let stuClass = ref("");
 let setClass = ref([
+{
+    label: "所有学生",
+  },
   {
     label: "计科2001",
   },
@@ -198,18 +203,33 @@ let setClass = ref([
 ]);
 // 查询对应班级的学生的学号，将成绩总数据的表进行遍历，如果学号对得上，说明是这个班级的，就push到tableData里面
 function classSelect() {
-  api(`select * from student where class='${stuClass.value}';`).then(res => {
-    let isClass = [];
-    res.res.forEach((item, i) => {
-      isClass.push(item.id);
+  if (stuClass.value == "所有学生") {
+    api(`select * from student`).then((res) => {
+      let isClass = [];
+      res.res.forEach((item, i) => {
+        isClass.push(item.id);
+      });
+      tableData.value = [];
+      allData.forEach((item, i) => {
+        if (isClass.includes(item.stucode)) {
+          tableData.value.push(item);
+        }
+      });
     });
-    tableData.value = [];
-    allData.forEach((item, i) => {
-      if (isClass.includes(item.stucode)) {
-        tableData.value.push(item);
-      }
+  } else {
+    api(`select * from student where class='${stuClass.value}';`).then(res => {
+      let isClass = [];
+      res.res.forEach((item, i) => {
+        isClass.push(item.id);
+      });
+      tableData.value = [];
+      allData.forEach((item, i) => {
+        if (isClass.includes(item.stucode)) {
+          tableData.value.push(item);
+        }
+      });
     });
-  });
+  }
 }
 // 获得焦点时候获取成绩存为变量，失去焦点时对比成绩是否有变化
 let dialogVisible = ref(false);
@@ -303,7 +323,7 @@ let option = ref({
         { value: 0, name: "中等" },
         { value: 0, name: "良好" },
         { value: 0, name: "优秀" },
-        { value: 0, name: "未登记" },
+        // { value: 0, name: "未登记" },
       ],
       emphasis: {
         itemStyle: {
