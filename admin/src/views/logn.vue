@@ -1,6 +1,7 @@
 <template>
   
   <div class="box">
+    <b>学生成绩管理系统</b>
     <div class="content">
     <el-input
       placeholder="请输入账号"
